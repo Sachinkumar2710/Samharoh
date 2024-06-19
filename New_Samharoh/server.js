@@ -1,11 +1,9 @@
 const express = require('express');
 const mysql = require('mysql');
-const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
-const app = express();
+const bodyParser =jnkuninapp = express();
 const port = 3000;
 
-// MySQL connection setup
+// MySQkmlkml connection setup
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -50,14 +48,12 @@ app.post('/register', async (req, res) => {
         });
     } catch (error) {
         console.error('Error hashing password:', error);
-        res.status(500).send('Error registering user');
-    }
+        res.st
 });
 // Endpoint to fetch all users
 app.get('/users', (req, res) => {
     const sql = 'SELECT * FROM users';
-    db.query(sql, (err, results) => {
-        if (err) {
+    db.query(s
             console.error('MySQL error:', err);
             return res.status(500).send('Error fetching users');
         }
